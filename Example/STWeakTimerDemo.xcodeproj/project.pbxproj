@@ -13,9 +13,13 @@
 		DC3C36751EA09BEF00D59E8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC3C36741EA09BEF00D59E8E /* Assets.xcassets */; };
 		DC3C36781EA09BEF00D59E8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC3C36761EA09BEF00D59E8E /* LaunchScreen.storyboard */; };
 		DC3C36851EA09C8D00D59E8E /* TestController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC3C36841EA09C8D00D59E8E /* TestController.m */; };
+		E2D1DFCE6E136A3F949AE2AA /* libPods-STWeakTimerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 16F9A50BC42F87CA6083D664 /* libPods-STWeakTimerDemo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		16F9A50BC42F87CA6083D664 /* libPods-STWeakTimerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-STWeakTimerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		674FC0FFF18E28E3A593F752 /* Pods-STWeakTimerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STWeakTimerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STWeakTimerDemo/Pods-STWeakTimerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		D41EC631B80D549EFE80441F /* Pods-STWeakTimerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STWeakTimerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-STWeakTimerDemo/Pods-STWeakTimerDemo.release.xcconfig"; sourceTree = "<group>"; };
 		DC3C36651EA09BEF00D59E8E /* STWeakTimerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STWeakTimerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3C36691EA09BEF00D59E8E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DC3C366B1EA09BEF00D59E8E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -33,17 +37,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2D1DFCE6E136A3F949AE2AA /* libPods-STWeakTimerDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		888A02624BB337655C48A338 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				16F9A50BC42F87CA6083D664 /* libPods-STWeakTimerDemo.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2AFF0B359807FEDE8DBCF47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				674FC0FFF18E28E3A593F752 /* Pods-STWeakTimerDemo.debug.xcconfig */,
+				D41EC631B80D549EFE80441F /* Pods-STWeakTimerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		DC3C365C1EA09BEF00D59E8E = {
 			isa = PBXGroup;
 			children = (
 				DC3C36671EA09BEF00D59E8E /* STWeakTimerDemo */,
 				DC3C36661EA09BEF00D59E8E /* Products */,
+				B2AFF0B359807FEDE8DBCF47 /* Pods */,
+				888A02624BB337655C48A338 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DC3C367C1EA09BEF00D59E8E /* Build configuration list for PBXNativeTarget "STWeakTimerDemo" */;
 			buildPhases = (
+				EA2EA4D87FC0CA69B389F956 /* [CP] Check Pods Manifest.lock */,
 				DC3C36611EA09BEF00D59E8E /* Sources */,
 				DC3C36621EA09BEF00D59E8E /* Frameworks */,
 				DC3C36631EA09BEF00D59E8E /* Resources */,
+				657AB638FC91B2D1ED764012 /* [CP] Embed Pods Frameworks */,
+				AFD003DFB924512790617B6C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -144,6 +171,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		657AB638FC91B2D1ED764012 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STWeakTimerDemo/Pods-STWeakTimerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFD003DFB924512790617B6C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-STWeakTimerDemo/Pods-STWeakTimerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA2EA4D87FC0CA69B389F956 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DC3C36611EA09BEF00D59E8E /* Sources */ = {
@@ -274,6 +349,7 @@
 		};
 		DC3C367D1EA09BEF00D59E8E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 674FC0FFF18E28E3A593F752 /* Pods-STWeakTimerDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PP25SV745R;
@@ -287,6 +363,7 @@
 		};
 		DC3C367E1EA09BEF00D59E8E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D41EC631B80D549EFE80441F /* Pods-STWeakTimerDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = PP25SV745R;
