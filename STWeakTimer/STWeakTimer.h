@@ -17,7 +17,7 @@
 
 #pragma mark -
 
-+ (nullable instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval target:(nonnull id)target selector:(nonnull SEL)selector userInfo:(nullable id)userInfo repeats:(BOOL)repeatz;
++ (nullable instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval target:(nonnull id)target selector:(nonnull SEL)selector userInfo:(nullable id)userInfo repeats:(BOOL)repeats;
 + (nullable instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval target:(nonnull id)target selector:(nonnull SEL)selector userInfo:(nullable id)userInfo repeats:(BOOL)repeats dispatchQueue:(nullable dispatch_queue_t)queue;
 + (nullable instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval userInfo:(nullable id)userInfo repeats:(BOOL)repeats handler:(void(^ _Nullable)(STWeakTimer * _Nullable timer))handler;
 + (nullable instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)interval userInfo:(nullable id)userInfo repeats:(BOOL)repeats dispatchQueue:(nullable dispatch_queue_t)queue handler:(void(^ _Nullable)(STWeakTimer * _Nullable timer))handler;
