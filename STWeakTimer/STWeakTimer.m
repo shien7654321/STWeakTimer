@@ -102,8 +102,10 @@
     }
     _scheduled = YES;
     [self resetTimerProperties];
+    __weak typeof(self) weakSelf = self;
     dispatch_source_set_event_handler(_timer, ^{
-        [self handleTimer];
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf handleTimer];
     });
     dispatch_resume(_timer);
 }
