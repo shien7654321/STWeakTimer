@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "STWeakTimer"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "An alternative to NSTimer."
   s.homepage     = "https://github.com/shien7654321/STWeakTimer"
   s.author       = { "Suta" => "shien7654321@163.com" }
