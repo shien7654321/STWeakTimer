@@ -21,13 +21,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _testArray = [NSMutableArray array];
-    __weak typeof(_testArray) weakTestArray = _testArray;
     __weak typeof(self) weakSelf = self;
     _timer = [STWeakTimer scheduledTimerWithTimeInterval:1 userInfo:nil repeats:YES handler:^(STWeakTimer * _Nullable timer) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
         CFTimeInterval timestamp = CACurrentMediaTime();
         NSLog(@"Timer handler: %f", timestamp);
-        [weakTestArray addObject:@(timestamp)];
-        [weakSelf.tableView reloadData];
+        [strongSelf->_testArray addObject:@(timestamp)];
+        [strongSelf.tableView reloadData];
     }];
 }
 
@@ -42,7 +42,6 @@
         [_timer resume];
     }
 }
-
 
 #pragma mark - UITableViewDataSource
 

@@ -114,7 +114,11 @@
     if (_queue && _timer) {
         if (!OSAtomicAnd32OrigBarrier(7, &_timerFlag.invalidated)) {
             dispatch_source_t timer = _timer;
+            BOOL scheduled = _scheduled;
             dispatch_async(_queue, ^{
+                if (!scheduled) {
+                    dispatch_resume(timer);
+                }
                 dispatch_source_cancel(timer);
             });
         }
@@ -154,24 +158,30 @@
 }
 
 - (void)pause {
-    if (!_valid || !_scheduled || !_queue || !_timer) {
+    if (!_valid || !_queue || !_timer) {
         return;
     }
     if (!OSAtomicAnd32OrigBarrier(7, &_timerFlag.invalidated)) {
         dispatch_source_t timer = _timer;
+        __weak typeof(self) weakSelf = self;
         dispatch_async(_queue, ^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            strongSelf->_scheduled = NO;
             dispatch_suspend(timer);
         });
     }
 }
 
 - (void)resume {
-    if (!_valid || !_scheduled || !_queue || !_timer) {
+    if (!_valid || !_queue || !_timer) {
         return;
     }
     if (!OSAtomicAnd32OrigBarrier(7, &_timerFlag.invalidated)) {
         dispatch_source_t timer = _timer;
+        __weak typeof(self) weakSelf = self;
         dispatch_async(_queue, ^{
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            strongSelf->_scheduled = YES;
             dispatch_resume(timer);
         });
     }
