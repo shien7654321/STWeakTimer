@@ -1,8 +1,9 @@
 # STWeakTimer
 
+[![Language](https://img.shields.io/badge/language-ObjC-limegreen.svg?style=flat)](http://cocoapods.org/pods/STWeakTimer)
+[![Platform](https://img.shields.io/cocoapods/p/STWeakTimer.svg?style=flat)](http://cocoapods.org/pods/STWeakTimer)
 [![Version](https://img.shields.io/cocoapods/v/STWeakTimer.svg?style=flat)](http://cocoapods.org/pods/STWeakTimer)
 [![License](https://img.shields.io/cocoapods/l/STWeakTimer.svg?style=flat)](http://cocoapods.org/pods/STWeakTimer)
-[![Platform](https://img.shields.io/cocoapods/p/STWeakTimer.svg?style=flat)](http://cocoapods.org/pods/STWeakTimer)
 
 ## An alternative to NSTimer.
 STWeakTimer is an alternative to NSTimer, it does not cause the retain cycle, it is thread-safe.
